@@ -1,0 +1,156 @@
+1.条件
+if(boolean){
+   if(){
+   }esle{
+   }
+}else{
+   if(){}else{
+   }
+}
+=>
+if(){}else if(){}else if(){}else{
+}
+-----------------
+===
+switch(常量){
+  default:
+  //break;
+  case  跟switch数据类型一样的常量:
+  break;//可以添加   
+}
+三目运算符：==》if(){}else{}
+boolean类型的表达式?XXXX:(boolean?XXX:XXX);
+-------------------------
+循环：做重复的事情
+1.开始条件（第一次执行）
+2.结束条件
+3.从开始到结束条件的变化
+4.需要循环的部分
+
+for(var  i=0;i<10;i++){
+  需要循环的部分
+  var  j =0;
+  while(j<10){
+      var  k  =0;
+      do{
+        XXXX ;
+	k++;
+      }while(k<10);
+    j++;
+  }
+}
+i=0 j=0 k 0-9
+i=0 j=1 k 0-9
+..
+i=0 j=9
+
+i=1
+---------------------------
+for（var  i=0;i<10;i++）{
+}
+
+增强for
+for(var  xx in  对象/数组){
+  xx:属性名
+}
+
+label：结束循环
+-------------
+break:跳出本次循环
+
+one:for(var  i=0;i<10;i++){
+   console.log(i)
+   two:for(var j =0;j<10;j++){
+    
+     if(j==5){
+       continue one;//强行一个循环
+     }
+      console.log(j); 
+   }
+}
+i=0  j 0 --5 
+i=1  j 0 ---5
+9
+----------------
+对象和函数
+1.对象
+     同桌  
+       属性（特性）：眼睛  鼻子 嘴巴
+       动作：  吃零食  爱睡觉...
+
+    1）对象的创建
+        基于Object构造器去创建
+
+	function  Object(){
+	
+	}
+	var  obj  = new Object();
+	obj.name="张三";
+	obj.age=20；
+	obj.sex="男";
+	obj.say=function(){
+	   console.log("hello);
+	}
+
+        字面量的形式去创建:
+	var  obj ={
+	  name:"张三",
+	  age:20,
+	  sex:"男",
+	  say:function(){
+	   console.log("hello")
+	 }
+	}
+2.对象属性的访问
+   对象.属性名/方法名
+   对象["属性名"]
+
+3.删除属性
+  delete  对象.属性名/方法名
+4.属性检测：（简单了解）
+  in   检测这个属性是不是在这个对象中(不管自有还是继承)  返回boolean类型的值
+   属性/方法名  in  对象、
+  hasOwnProperty：对象.hasOwnProperty("属性名/方法名") 检测是不是自己的
+
+  propertyIsEnumerable:检测属性是不是自持的（看属性是不是可以枚举）
+
+5）对象的序列化  
+var  per{
+
+}
+
+
+public calss per{
+  public  String name;
+}
+JSON:
+[
+{
+  "name"："zhangsan"，
+  "age":20
+},
+{
+  "name"："zhangsan"，
+  "age":20
+}
+]
+----------
+函数：
+ 1.函数的声明
+    声明式
+    
+     function   方法名(参数列表){
+     
+     }
+    表示式形式
+    var  test = function(){
+    
+    }
+   
+  
+
+
+
+
+
+

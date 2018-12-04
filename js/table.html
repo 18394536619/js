@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>table</title>
+		<style type="text/css">
+			table {
+				border-collapse: collapse;
+				margin: 20px auto;
+			}
+			
+			table tr td {
+				width: 100px;
+				height: 30px;
+				border: 1px solid black;
+				text-align: center
+			}
+			
+			h1 {
+				width: 200px;
+				margin: 0 auto
+			}
+			
+			div {
+				width: 200px;
+				margin: 50px auto
+			}
+			
+			.hiddenTr {
+				display: none
+			}
+			
+			.current {
+				background-color: pink
+			}
+			
+			p {
+				width: 200px;
+				margin: 20px auto;
+			}
+			
+			p input {
+				height: 20px;
+				text-indent: 10px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+
+				var btn = document.getElementsByTagName('button');
+				var hiddenTr = document.getElementsByClassName('hiddenTr')[0];
+				//添加行
+				btn[0].onclick = function() {
+					//获取输入值
+					var inputs = document.getElementsByTagName('input')[0];
+					//					console.log('****', inputs.value);
+					var cloneTr = hiddenTr.cloneNode(true);
+					cloneTr.className = '';
+					if(inputs.value) { //有输入值时，添加相应多行
+						for(var i = 1; i <= inputs.value; i++) {
+							var cloneTr = hiddenTr.cloneNode(true);
+							cloneTr.className = '';
+							hiddenTr.parentNode.appendChild(cloneTr);
+						}
+					} else { //没有输入值时添加一行
+//						var cloneTr = hiddenTr.cloneNode(true);
+//						cloneTr.removeAttribute('class');
+						hiddenTr.parentNode.appendChild(cloneTr);
+					}
+
+				};
+				
+				//删除行
+				btn[1].onclick = function() {
+					var inputs = document.getElementsByTagName('input');
+//					console.log(inputs[0].value);
+					var arr = [];
+					if(inputs[0].value) {//有输入值时，删除相应多行
+						for(var i=1;i<=inputs[0].value;i++){
+							hiddenTr.parentNode.removeChild(hiddenTr.parentNode.lastChild)
+						}
+						
+					} else {//没有输入值时，删除所选行
+						arr.slice.call(inputs, 0).forEach(function(item, index) {
+							if(item.checked) {
+								hiddenTr.parentNode.removeChild(item.parentNode.parentNode)
+							}
+						})
+					}
+
+				};
+				
+				/*事件代理*/
+				var tb=hiddenTr.parentNode;
+				//鼠标移入变色
+				tb.onmouseover=function(event){
+					//给目标元素所在行添加颜色
+//					console.log(event.target.parentNode);
+					if(event.target.parentNode.nodeName=='TR'){
+						event.target.parentNode.style.backgroundColor="#0066F0";
+					}else{
+						event.target.parentNode.parentNode.style.backgroundColor="#0066F0";
+					}
+					
+				}
+				//鼠标移出回复
+				tb.onmouseout=function(event){
+//					console.log(event.target.parentNode);
+					if(event.target.parentNode.nodeName=='TR'){
+						event.target.parentNode.style.backgroundColor="";
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<h1>学生信息系统</h1>
+		<p><input type="text" placeholder="请输入数值"/></p>
+		<table>
+
+			<tr class="hiddenTr">
+				<td><input type="checkbox"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>姓名</td>
+				<td>年龄</td>
+				<td>班级</td>
+			</tr>
+
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>terry</td>
+				<td>23</td>
+				<td>web1801</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>tom</td>
+				<td>36</td>
+				<td>web1801</td>
+			</tr>
+		</table>
+
+		<div>
+			<button>添加</button>
+			<button>删除</button>
+		</div>
+
+	</body>
+
+</html>

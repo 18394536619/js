@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM2级事件绑定</title>
+	<style type="text/css">
+		.outer{
+			width: 300px;
+			height: 300px;
+			border:1px solid black;
+			margin:20px auto;
+		}
+		.center{
+			width: 200px;
+			height: 200px;
+			border:1px solid black;
+			margin:20px auto;
+		}
+		.inner{
+			width: 100px;
+			height: 100px;
+			border:1px solid black;
+			margin:20px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="outer" id="outer">outer
+		<div class="center" id="center">center
+			<div class="inner" id="inner">inner</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var outer=document.getElementById("outer");
+		var center=document.getElementById("center");
+		var inner=document.getElementById("inner");
+//		function handler(){
+//			console.log(event.currentTarget);
+//			
+//		}
+		//DOM2级事件绑定
+		//兼容性不好
+		//非IE事件处理程序
+		//IE8以及更早版本只支持事件冒泡。
+
+		inner.onmouseenter=function(event){
+			console.log(event.currentTarget);
+		}
+		center.onmouseenter=function(event){
+			console.log(event.currentTarget);
+		}
+		outer.onmouseenter=function(event){
+			console.log(event.currentTarget);
+		}
+//	inner.addEventListener("mouseover",handler);//可以多个绑定
+//	center.addEventListener("mouseover",handler);
+//	outer.addEventListener("mouseover",handler);
+
+	//解除绑定
+//	inner.removeEventListener("click",handler);
+		
+	</script>
+</body>
+</html>

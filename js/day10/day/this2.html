@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+	<script type="text/javascript">
+	   var  name  ="张三";
+	   function  Person(name){
+		   var  name =name;
+		   this.name=name;
+		   this.say=function(){
+		     console.log(this.name);
+			 say1();
+		   }
+		   var  say1  =function(){
+		     console.log(this.name);
+		   }
+
+	   }
+	  // console.log(this.name);//windo
+	 var  per  = new Person("liqi");
+	 console.log(per.name)
+	 per.say();
+	 /*
+	   1.不管方法位于哪个位置，主要看看这个方法是怎么调用的
+	   如果调用方法的前面没有对象，方法内部的this统一指向window
+	   如果调用方法的前面有个对象，那么在被调用的方法里面this指向方法的调用者
+	   如果使用new关键字调用方法，那么被调用的方法中this指向新创建的对象
+	 */
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

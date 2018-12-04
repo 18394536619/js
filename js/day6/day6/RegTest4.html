@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>exec</title>
+	<script>
+	     var   reg =/ab/i;
+         var  str  ="ab hello abc ab";
+         var  result ;
+		 //如果使用exec的时候没有加代表每次匹配都是匹配到的第一个位置开始匹配
+		 while(result = reg.exec(str)){
+		    console.log(result);
+		 }
+		 
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

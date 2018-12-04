@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>array</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // 1.请判断如下对象是否是数组
+//    var arr = {a:1,b:2}
+//    var arr2 = [1,2,3];
+//    var arr3 = [{a:1},{b:2}];
+//    console.log(Array.isArray(arr));
+//    console.log(Array.isArray(arr2));
+//    console.log(Array.isArray(arr3));
+    // 2.将下列数组转换为字符串形式，至少用3种方法。
+      var arr = [1,2,3,null,undefined,"23"];
+      console.log(String(arr));
+      console.log(arr.toString());
+      console.log(JSON.stringify(arr));
+      console.log(arr.join('|'));
+      console.log((""+arr));
+
+    // 3.自定义任意一个数组，进行进栈、出栈以及队列的进出操作，并分析其中的区别。
+    var arr = [1,2,3,null,undefined,"23"]
+    var arr1 = arr.push(1)
+    console.log(arr);//1.改变了原数组，在数组的末尾新增一个数据 2.返回数组长度 
+    console.log(arr1);
+
+     var arr = [1,2,3,null,undefined,"23"]
+    var arr1 = arr.pop()
+    console.log(arr);//1.改变了原数组，在数组的末尾删除一个数据 2.返回已经被删除的数据
+    console.log(arr1);
+
+    var arr = [1,2,3,null,undefined,"23"]
+    var arr1 = arr.shift()
+    console.log(arr);//1.改变了原数组，在数组的头部删除一个数据 2.返回已经被删除的数据
+    console.log(arr1);
+
+     var arr = [1,2,3,null,undefined,"23"]
+    var arr1 = arr.unshift(111)
+    console.log(arr);//1.改变了原数组，在数组的头部添加一个数据 2.数组的长度
+    console.log(arr1);
+
+
+    // 4.将下列数组以倒序输出。
+      var arr = [1,2,33,4,8,"27",16];
+      var arr1 = arr.reverse();
+      console.log(arr)
+      console.log(arr1)
+
+    // 5.将[9,23,3,4]添加到下列数组的末尾，并打印原数组和新数组，观察区别。
+      var arr = [1,2,33,4,8,"27",16];
+      var item = [9,23,3,4];
+      console.log(arr);
+      var arr2 = arr.concat(item);
+      console.log(arr2);
+    // 6.利用以下数组，产生一个新数组，新数组的组成为以下数组的[4,8,"27"]
+      var arr = [1,2,33,4,8,"27",16];
+      var arr1 = arr.slice(3,6);
+      console.log(arr);
+      console.log(arr1);
+
+    // 7.利用splice方法对任意自定义的数组进行删除、插入、替换操作。
+      var arr = [1,2,33,4,8,"27",16];
+      var arr2 = arr.splice(1,2);//删除(从哪里删除，删除几个项)
+      console.log(arr);   //改变原数组
+      console.log(arr2);  //返回已经删除的项
+
+      var arr = [1,2,33,4,8,"27",16];
+      var arr2 = arr.splice(1,0,"insert item");     //插入(从哪里插入,0,要添加的数据)
+      console.log(arr);                             //改变原数组
+      console.log(arr2);                            //返回已经删除的项
+
+//    var arr = [1,2,33,4,8,"27",16];
+//    var arr2 = arr.splice(1,2,"insert item","insert item2");      //替换(从哪里插入,替换的项数,item1，item2)
+//    console.log(arr);                                             //改变原数组
+//    console.log(arr2);                                            //返回已经删除的项*/
+
+    // 8.用2种方法找出以下数组中项8的位置
+//    var arr = [1,2,33,4,8,"27"];
+//    console.log(arr.indexOf(8));
+//    console.log(arr.lastIndexOf(8));
+
+    // 9.使用every();方法对以下数组进行检测判断，看是不是每项都大于2。
+//   var arr = [11,5,23,7,4,1,9,1];
+//    var boolean = arr.every(function(item){
+//      return item>2;
+//    })
+//    console.log(arr);//原数组
+//    console.log(boolean);//返回false
+
+    // 10.使用some();方法对以下数组进行检测判断，看是不是部分项是大于20的。
+//    var arr = [11,5,23,7,4,1,9,1];
+//    var boolean = arr.some(function(item){
+//      return item>2;
+//    })
+//    console.log(arr);     //原数组
+//    console.log(boolean); //返回true
+
+    // 11.使用filter();方法对以下数组进行操作，返回其中由大于6组成的新数组。
+     /* var arr = [11,5,23,7,4,1,9,1];
+      var newArr = arr.filter(function(item){
+        return item>6;
+      })
+      console.log(arr);   //原数组
+      console.log(newArr);//返回的数组[11, 23, 7, 9]*/
+
+    // 12.使用map();方法对以下数组进行操作，是每一项都变为原来的3倍，并返回新数组。
+      /*var arr = [11,5,23,7,4,1,9,1];
+      var newArr = arr.map(function(item){
+        return item*3;
+      })
+      console.log(arr);   //原数组
+      console.log(newArr); //[33, 15, 69, 21, 12, 3, 27, 3]*/
+
+
+    // 13.使用forEach();方法对以下数组进行操作，使之以【下标-项】的形式展现。
+      var arr = [11,5,23,7,4,1,9,1];
+      arr.forEach((item,index)=>{
+        console.log(index+'-'+item);
+      })
+
+
+    
+  </script>
+</body>
+</html>

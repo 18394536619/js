@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数的构建</title>
+	<script type="text/javascript">
+	  //计算 a+b 的值 并将结果进行反回
+	  var  method  =function(a,b){
+		  //字面量声明形式
+	      var  res =a+b;
+		  return  res;
+	  }
+	  var  res =method(10,20);
+	  //率先被加载
+	  method1(10,20);
+	  function  method1(a,b){
+	     var  res  =a+b;
+		 return  res;
+	  }
+	  method1(20,30);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

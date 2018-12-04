@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>myslice</title>
+		<script type="text/javascript">
+			var arr=[1,2,3,4,5,6,7,8,9];
+			Array.prototype.myslice=function(b,e){
+//				console.log('++',e);
+				var a=[];
+				if(e==undefined){
+					e=this.length
+				}
+				
+				for(var i=0;i<this.length;i++){
+					if(i>=b&&i<e){
+						a.push(this[i])
+					}
+					
+				}
+				return a
+//				console.log('++',a);
+			}
+						
+			var aa=arr.myslice(5,7);
+			console.log('++',aa);
+			console.log('++',arr);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

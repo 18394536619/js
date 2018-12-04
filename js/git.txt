@@ -1,0 +1,19 @@
+你做的：
+    1.先上传你的文件
+    2.在你github项目里面的setting里面邀请小伙伴，小伙伴会收到一封邮件
+小伙伴做的
+1、收到邮件之后先点击同意
+2、使用git clone ...进行下载
+3.查看.git里面的config文件，会显示你下载的人家的远程仓库的地址
+4、现在你可以创建一个分支进行开发
+    1.git brnach 分支
+    2.git branch 
+    3.git checkout 分支
+    4.git branch
+5.开发代码
+6.git add *
+7.git commit -m "标记"
+8.git push origin 分支
+9.git branch master
+10.git merge 分支
+11.git push -u origin master

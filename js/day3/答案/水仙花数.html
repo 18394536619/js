@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>水仙花数</title>
+		<script type="text/javascript">
+			//打印出所有的“水仙花数”，所谓“水仙花数”是指一个三位数，其各位数字立方和等于该数本身。
+			//例如：153是一个“水仙花数”，因为153=1的三次方＋5的三次方＋3的三次方。
+//			for(var i=1;i<=9;i++){
+//				for(var j=0;j<=9;j++){
+//					for(var k=0;k<=9;k++){
+//						var a=i*100+j*10+k;
+//						if(i*i*i+j*j*j+k*k*k==a){
+//							console.log(a);
+//						}
+//					}
+//				}
+//			}
+			for(var i=1;i<=9;i++){
+				for(var k=0;k<=9;k++){
+					for(var j=0;j<=9;j++){
+						var a=i*100+k*10+j;
+						if(a==i*i*i+k*k*k+j*j*j){
+							console.log(a);
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

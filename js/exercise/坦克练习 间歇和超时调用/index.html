@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>坦克大战</title>
+	<style type="text/css">
+		#btns{
+			width: 400px;
+			margin:0 auto;
+		}
+		#content{
+			width: 800px;
+			height: 500px;
+			border:1px solid black;
+			margin:20px auto;
+		}
+
+		#content img.tanke1{
+			position: absolute;
+		}
+		#content img.tanke2{
+			position: absolute;
+			top:130px;
+		}
+		span{
+			color: red;
+			font-size: 16px;
+			font-weight: bold;
+		}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var tanke=document.getElementsByTagName('img');
+		var btns=document.getElementsByTagName("button");
+		var span=document.getElementsByTagName("span")[0];
+		/*手动移动*/
+		btns[0].onclick=function(){
+			tanke[0].style.left=tanke[0].offsetLeft+10+"px";
+		}
+
+		/*发射*/
+		btns[1].onclick=function(){
+			var time=5;
+			var id=setInterval(function(){
+				span.innerHTML=time--;
+				if(time<=0){
+					clearInterval(id);
+				}
+			},1000);
+			setTimeout(function(){
+				tanke[0].style.left=tanke[0].offsetLeft+300+"px";
+			},5000);
+		}
+		/*赛跑*/
+
+		btns[2].onclick=function(){
+			var id=setInterval(function(){
+
+			var random1=parseInt(Math.random()*10);
+			var random2=parseInt(Math.random()*10);
+			tanke[0].style.left=tanke[0].offsetLeft+random1+"px";
+			tanke[1].style.left=tanke[1].offsetLeft+random2+"px";
+			if(tanke[0].offsetLeft>800 || tanke[1].offsetLeft>800){
+				console.log(id);
+				clearInterval(id);
+				if(tanke[0].offsetLeft>800){
+					alert("tank1胜出");
+				}else{
+					alert("tanke2胜出");
+				}
+			}
+			},50);
+
+		}
+
+
+/*自动移动*/
+function run(){
+	var id0=setInterval(function(){
+		tanke[0].style.left=tanke[0].offsetLeft+10+"px";
+		if(tanke[0].offsetLeft>800){
+			clearInterval(id0);
+			tanke[0].src="tanke_down.jpg";
+			var id1=setInterval(function(){
+
+				tanke[0].style.top=tanke[0].offsetTop+10+"px";
+				if(tanke[0].offsetTop>450){
+					clearInterval(id1);
+					tanke[0].src="tanke_left.jpg";
+					var id2=setInterval(function(){
+						tanke[0].style.left=tanke[0].offsetLeft-10+"px";
+						if(tanke[0].offsetLeft<100){
+							clearInterval(id2);
+							tanke[0].src="tanke_up.jpg";
+							var id3=setInterval(function(){
+								tanke[0].style.top=tanke[0].offsetTop-10+"px";
+								if(tanke[0].offsetTop<50){
+									clearInterval(id3);
+									tanke[0].src="tanke_right.jpg";
+									run();
+									
+								}
+							},50);
+						}
+					},50);
+				}
+			},50);
+		}
+	},50);
+}
+
+btns[3].onclick=run;
+
+
+
+
+
+	}
+	</script>
+</head>
+<body>
+	<div id="btns">
+		<button>手动移动</button>
+		<button>发射</button>
+		<button>赛跑</button>
+		<button>自动移动</button>
+		<span>5</span>
+	</div>
+	<div id="content">
+		<img src="tanke_right.jpg" class="tanke1">
+		<img src="tanke_right.jpg" class="tanke2">
+	</div>
+</body>
+</html>

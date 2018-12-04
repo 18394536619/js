@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		ul li{
+			list-style: none
+		}
+
+		.left{
+			border:1px solid black;
+			width: 200px;
+			height: 450px;
+			margin-left: 20px;
+			margin-top: 20px;
+			padding-top: 20px;
+			float: left
+			
+		}
+		.left li{
+			width: 130px;
+			height: 130px;
+			margin:0 auto 20px;
+		}
+		.left img{
+			width: 130px;
+			height: 130px;
+		}
+		.left li.current{
+			border:3px solid orange;
+		}
+
+		.right{
+			margin-left: 120px;
+			margin-top: 20px;
+			width: 460px;
+			height: 430px;
+			border:1px solid black;
+			float: left;
+			overflow: hidden;	
+			padding: 20px
+		}
+		.right li{
+			width: 460px;
+			height: 430px;
+			margin:0 auto 20px;
+		}
+		.right img{
+			width: 460px;
+			height: 430px
+		}
+		.right ul{
+			position: relative;
+			top:0px;
+		}
+		
+
+
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+
+			//左侧鼠标移入事件
+			//使用事件代理处理
+			var leftul=document.getElementById("leftul");
+			var leftlis=leftul.children;
+			var rightul=document.getElementById("rightul");
+			var flag=0;
+			var timeout;
+			leftul.onmouseover=function(event){
+				//console.log(event.target);
+				var target=event.target;
+				//只想要鼠标移动到图片上触发事件
+				if(target.nodeName=="IMG"){
+					//移除其他li样式，需要遍历li
+					clearTimeout(timeout);
+					
+					Array.prototype.slice.call(leftlis,0).forEach(function(item){
+						item.removeAttribute("class");
+					});
+					//给当前li添加样式，并且取消其他li上面的样式
+					//target.parentNode.style.border="3px solid pink";
+					target.parentNode.setAttribute("class","current");
+					var index=target.parentNode.getAttribute("val");
+					move(-(450*index));
+					flag=+index;
+				}
+			}
+
+			//当鼠标移出img时，再次执行定时轮转
+			leftul.onmouseout=function(event){
+				var target=event.target;
+				if(target.nodeName=="IMG"){
+						timeout=setTimeout(step,3000);
+					}
+			}
+
+
+			//移动函数封装
+			function move(pos){
+				var m=function(){
+
+					var nowPos=parseInt(rightul.style.top,10);
+						
+					var speed=60;
+					//450px 
+					if(Math.abs(nowPos-pos)>speed){
+						//判断移动方向
+						nowPos -= ((nowPos-pos)/Math.abs(nowPos-pos))*speed;
+						rightul.style.top=nowPos+"px";
+
+						setTimeout(m,30);
+						
+					}else{
+						rightul.style.top=pos+"px";
+					}
+				}
+				setTimeout(m,30);
+
+			}
+
+			//定时轮转
+					step=function(){
+						//去点所有样式
+						leftlis[flag].className="";
+						
+						if(flag>=leftlis.length-1){
+							flag=0;
+						}else{
+							flag=flag+1;
+						}
+
+						leftlis[flag].className="current";
+						move(-450*flag);
+						timeout=setTimeout(step,3000);
+
+						}
+						timeout=setTimeout(step,3000);
+
+
+		
+		}
+	</script>
+</head>
+<body>
+	<!--左侧缩略图-->
+	<div class="left">
+		<ul id="leftul">
+			<li val="0" class="current"><img src="a.jpg" alt=""></li>
+			<li val="1"><img src="b.jpg" alt=""></li>
+			<li val="2"><img src="c.jpg" alt=""></li>
+		</ul>
+	</div>
+	<!--右侧轮转大图-->
+	<div class="right">
+		<ul id="rightul">
+			<li><img src="a.jpg" alt=""></li>
+			<li><img src="b.jpg" alt=""></li>
+			<li><img src="c.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

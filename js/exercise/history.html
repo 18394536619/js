@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		console.log(history.length);
+		alert();
+		var btns=document.getElementsByTagName("button")[0];
+
+		btns.onclick=function(){
+			//location.assign("1.html")
+			//location.replace("1.html");
+			location.reload();
+		}
+
+
+
+
+
+		}
+	</script>
+</head>
+<body>
+	<a href="1.html">跳转到1</a>
+	<button>点击跳转</button>
+</body>
+</html>

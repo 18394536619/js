@@ -1,0 +1,163 @@
+1.正则表达式
+    字符 字面量
+    var  reg =/abc/ig;
+    [acb]:[]中出现都可以
+    [^abc]:除了
+    .  :任意一个字符
+    \w :[a-zA-Z0-9]
+    \W:除了[a-zA-Z0-9]之外的
+    \d:数字[0-9]
+    \s:空格 制表符..
+    \S:除了空格制表符..
+    2.次数
+      {n,m}:最少n次最多出现m次
+      {n,}：最少出现n 
+      {n}:只能出现这么多次
+      *:0次或是多次
+      ？：出现0从或1次
+      +：出现1次或多次
+    3.匹配形式
+         非贪婪匹配：a ?
+	 贪婪匹配： aaa   
+    4.分组
+      java(Script)?
+      ---------------
+      exec():
+      test():
+      ----------------
+      String 对象对于正则表达式的支持
+      str.search(正则表达式/"")
+      str.replace(正则表达式,替换的内容)
+      str.split(正则表达式):字符串安州某种形式
+      分割成一个一个小的字符串，然后返回一个
+      字符串数组。
+  ----------------
+  内置对象：
+   String:
+     切割：
+        从n开始切割 到m所在的位置结束但是不包含m
+        slice(n,m)
+	substring(n,m)
+	substr(n,m):从n开始往后切割m个字符
+	trim():去除空格
+	toUpperCase:
+	toLowerCase:
+
+   Math:
+      min()
+      max()
+      round()
+      ceil()
+      floor()
+      random():[0,1)------>
+
+--------------------------
+var  obj  ={
+  name:"zhangsan"
+}
+
+html:
+console.log(obj.name)：
+obj.toString();
+for(var  key  in obj){
+
+}
+2.arguments.length
+  var  arr =[10,80];
+----------------------------
+function Object(){
+}
+对象的构建：Object 
+   1.方式
+      var  obj  = new Object();
+      obj.name="zhangsan";
+      ==>
+      var  obj  = {
+        name:"zhangsan"
+      }
+      100   100学生对象
+      2.改进
+-----------------
+封装： test()
+function test(){
+}
+new test();
+
+构造函数： Test()
+function   Test(){
+}
+调用方法的方式有关：
+  new  Test();//构造函数的形式体现的
+
+function   Person(name,age,id){
+   this.name=name;
+   this.age=age;
+   this.id=id;
+}
+this:如果使用new关键字调用一个函数
+那么this代表的就是刚刚构建好的这个对象
+
+
+function  Person(name){
+  this.name=name;
+}
+----------
+var  obj={};
+obj.name=""
+---------------------------
+1.直接构建
+  var  obj  = new Object();
+  obj..name=name;
+2.工厂模式
+  function  creatPer(name){
+    var  obj  = new Object();
+    obj.name=name;
+    return  obj;
+  }
+  3.构造器模式
+    function  Person(name,age){
+      this.name=name;
+      this.age=age;
+      this.say=function(){
+      }
+    }
+
+    var  pp= new Person("zahngs",10);
+4.纯原型模式
+  function Person(){}
+  Person.prototype.name="战三";
+  Person.prototype.say=function(){}
+  new Person();
+5.原生原型+构造器
+  function  Person(name){
+    this.name=name;
+  }
+  Person.prototype.say=function(){
+  }
+6.自行构建原型对象+构造器
+  function  Person(name){
+    this.name=name;
+  }
+  Person.prototype={
+    constructor:Person,
+    say:function(){
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

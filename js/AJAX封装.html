@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>AJAX封装</title>
+		<script type="text/javascript">
+			window.onload=function(){
+				var btn=document.getElementsByTagName('button')[0];
+				function ajaxs(url,fnsucess,fnfaild){
+					//创建ajax对象
+					var myajax=new XMLHttpRequest();
+					//连接服务器
+					myajax.open('GET',url,true);
+					//发送请求
+					myajax.send();
+					//接收响应
+					myajax.onreadystatechange=function(){
+						if(myajax.readyState==4){
+							if(myajax.status==200){
+								//成功
+								fnsucess(myajax.responseText);
+							}else{
+								//失败
+								fnfaild(myajax.status);
+							}
+						}
+					}
+				}
+				
+				btn.onclick=function(){
+					var url='http://120.78.164.247:8099/manager/user/findAllUser';
+					ajaxs(url,function(data){//成功处理函数
+						console.log('success',data)
+					},function(data){//失败处理函数
+						console.log(data)
+					})
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<button>点击获取数据</button>
+		</div>
+	</body>
+</html>

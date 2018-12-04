@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//15.
+//			var p = {//1001
+//			name : "张三"//1
+//			}
+//			function people1(n){
+//				return n;
+//			}
+//			function people2(n){//1001
+//				n.name = "哎呀";
+//				return n;
+//			}
+//			function people3(n){//1001
+//				/*
+//				 p传进来之后被赋了新的空间，没有对p原有空间造成任何伤害，
+//				 但是新空间为局部变量，函数执行结束后被清除，p又回到原有空间
+//				 */
+//				n = {//2
+//					name : "谁呀"
+//				}
+//				return n;//p3
+//			}
+////			
+//			var p1 = people1(p);
+////			console.log(n);//
+//			console.log(p);//三
+//			console.log(p1);//三
+//			var p2 = people2(p);
+//			console.log(p);//哎呀
+//			console.log(p2);//哎呀
+//			var p3 = people3(p);
+//			console.log(p);//哎呀
+//			console.log(p3);//谁呀
+//			console.log(p);//哎呀
+//			
+//			//14.
+//			var color = "orange"; 
+//			window.color = "red";
+//			var person = {
+//				color:"blue"
+//			};
+//			function sayColor(){
+//				var color = "pink";
+//				console.log(this.color);    
+//			}
+//			sayColor();//red
+//			person.sayColor = sayColor; 
+//			person.sayColor();//blue
+//			person.sayColor.call();//red
+//			person.sayColor.call(this);//red
+//			person.sayColor.call(window);//red
+//			person.sayColor.call(person);//blue
+	
+			//16.
+			var color = "orange"; 
+			window.color = "red";
+			var person = {
+				color:"blue"
+			};
+			function sayColor(){//1001
+				var color = "pink";
+				this.color = "pink";
+				console.log('++',this); 
+				console.log(this.color);    
+			}
+			person.sayColor = sayColor;
+			person.sayColor.call(sayColor);//udefined 是因为运行环境sayColor函数里边并没有color属性
+			person.sayColor.call(sayColor());//red
+			
+
+//			//17.
+//			var color = "orange"; 
+//			window.color = "red";
+//			var person = {
+//				color:"blue"
+//			};
+//			function sayColor(){
+//				/*所有执行环境中的color在这里都被改变*/
+//				var color = "green";
+//				this.color = "pink";
+//				
+//				console.log('--',this); 
+//				console.log(this.color);    
+//			}
+//			sayColor(); 
+//			person.sayColor = sayColor; 
+//			person.sayColor();
+//			person.sayColor.call();
+//			person.sayColor.call(this);
+//			person.sayColor.call(window);
+//			person.sayColor.call(person);
+//			person.sayColor.call(sayColor);//运行环境为函数sayColor,通过this.color给函数添加了一个color的属性，属性值为pink.
+//			person.sayColor.call(sayColor());
+
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>myfilter</title>
+		<script type="text/javascript">
+			var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+			Array.prototype.myFilter = function(method) {
+				var newarr=[];
+				for(var i = 0; i < this.length; i++) {
+					var aa=method(this[i], i, this);					
+					if(aa==true){
+						newarr.push(this[i]);
+					}					
+				}
+//				console.log('+++',newarr);
+				return newarr;
+			}
+			
+			var result = arr.myFilter(function(item, index, arr) {
+				return item > 5;
+			});
+			console.log(result);
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

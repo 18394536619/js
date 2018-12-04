@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>内置对象</title>
+		<script type="text/javascript">
+			/*var num=12;
+			var str='abc123wtrytiuikxvcbvnbbvnm';
+			console.log(num.toString());
+			var nu=new String(num);
+			console.log(str.charAt(2));
+			console.log(str.length);
+			console.log(str.indexOf('b'));
+			console.log(str.concat('www'));
+			console.log(str.slice(1,5));
+			console.log(str.substr(1,5));
+			console.log(str.substring(5,1));
+			console.log(str.toUpperCase());*/
+			
+			/*var arr=[1,2,3,4];
+			var result=Math.min('0',true,2,45,33,23);//null,true,false,'','1'可被转化为number
+			var res=Math.max(true,false);//
+			var res1=Math.ceil(12.1);
+			var res2=Math.floor(12.9);
+			var res3=Math.round(2.5);*/
+			
+			/*
+			 Math.random()产生0-1之间的随机数;
+			 如想产生0-n之间的随机数，Math.random()*n;
+			 如想产生x-y之间的随机数Math.round(Math.random()*(y-x))+x;
+			 */
+			/* 
+			var res4=Math.random()*20;
+			var res5=Math.round(Math.random()*15)+5;
+			console.log(res5);
+			*/
+			
+			var date=new Date();
+			console.log(date);
+//			var str=date.getDate();
+//			var str1=date.getDay();
+//			var str2=date.getFullYear();
+//			var str3=date.getMonth();
+//			var str4=date.getSeconds();
+//			var str5=date.toDateString();
+//			var str6=date.toTimeString();
+//			var str7=date.toString();
+			var str8=date.toLocaleDateString();
+			var str9=date.toLocaleString();
+			var str10=date.toString();
+			console.log(str8);
+			console.log(str9);
+			console.log(str10);
+			
+			var str='2018-8-29';
+			var datt=new Date(str);
+			console.log(datt);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

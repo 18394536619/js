@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>完全数</title>
+		<script type="text/javascript">
+			//求1000以内的完全数.若一个自然数，恰好与除去它本身以外的一切因数的和相等，这种数叫做完全数。
+			
+			for(var i=1;i<=1000;i++){
+				var num=0;
+				for(var j=1;j<i;j++){
+					if(i%j==0){
+						num=num+j;
+					}
+					
+				}
+				if(i==num){
+					console.log('完全数',num);
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

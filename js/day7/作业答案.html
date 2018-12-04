@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>正则</title>
+		<script type="text/javascript">
+			var input=prompt('请输入内容');
+			//只能输入数字
+//			var reg=/^[0-9]*$/;
+//			var res=input.match(reg);
+//			console.log(res);
+
+			//只能输入至少n位的数字		
+//			var reg2=/^\d{4,}$/;
+//			var res2=input.match(reg2);
+//			console.log(res2);
+
+			//只能输入由26个英文字母组成的字符串：
+//			var reg3=/^[A-Za-z]+$/;
+//			var res3=input.match(reg3);
+//			console.log(res3);
+
+			//只能输入由数字、26个英文字母或者下划线组成的字符串：""
+			var reg4=/^\w+$/;
+			var res4=input.match(reg4);
+			console.log(res4);
+			
+			//以字母开头，长度在6~18之间，只能包含字符、数字和下划线
+//			var reg5=/^[a-zA-Z]\w{5,17}$/;
+//			var res5=input.match(reg5);
+//			console.log(res5);
+			
+//			var str='css javascript html object arry function string concat slice splice substr';
+//			var pat=new RegExp('html','g');
+//			var result=pat.exec(str);//找到返回数组，找不到返回null
+////			var result4=pat.test(str);//匹配成功返回true,失败返回false
+//			var result1=str.replace('arry','Arry');//将匹配的元素替代
+//			var result2=str.search(pat);//不支持全局，返回第一匹配的位置
+//			var result3=str.match(pat);//返回匹配结果组成的数组
+//			console.log('exec:',result);
+////			console.log('test:',result4);
+//			console.log('replace:',result1);
+//			console.log('search:',result2);
+//			console.log('match:',result3);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+﻿1.
+   要求建立学生五个对象：
+   属性： ID  name   source
+   1.按照学号从小到大将对象进行排序
+   2.按照学生的成绩从大到小进行排序
+   3（选做）
+      有一个学生名字叫做tom ,y要求名字为tom的学生
+      不管考多少分都排在第一位。
+      其他学生按照成绩高低排序
+2，书写一个函数，实现对于加减乘除的操作
+
+3.阅读以下程序，写出结果，并说明理由（自己先分析，再拿电脑测试）
+		var value = 3;
+		var c = {
+			value : 1
+		}
+		var d = c;
+		d.value = 2;
+		alert(value);    
+		alert(c.value);  
+		alert(d.value);  
+
+4.阅读以下程序，写出结果，并说明理由（自己先分析，再拿电脑测试）
+		var a = 5;
+		function s(){
+			var a = 8;
+			console.log(a); 
+		}
+		s();
+		console.log(a);
+5.阅读以下程序，写出结果，并说明理由（自己先分析，再拿电脑测试）
+		var f = 66;
+		function sum(){
+			var f = 88;
+			console.log(this.f);
+		}
+		sum();
+		window.sum();
+		var obj = {
+			f : 99,
+			sum : sum
+		}
+		obj.sum();
+
+
+
+选做题（基础稍微弱一点的同学可不做，看一看，但最好做一做，便于日后找工作）：
+6.阅读以下程序，写出结果，并说明理由（自己先分析，再拿电脑测试）
+		var f = 33;
+		function pro(){
+			var f = 55;
+			console.log(this.f);
+		}
+		pro();
+		pro.call();
+		var obj2 = {
+			f : 77
+		}
+		obj2.pro = pro;
+		obj2.pro();
+		pro.call(obj2);
+		obj2.pro.call();
+		obj2.pro.call(this);
+		obj2.pro.call(window);
+		obj2.pro.call(obj2);

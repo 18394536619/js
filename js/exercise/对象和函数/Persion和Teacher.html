@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>persion和teacher</title>
+		<script type="text/javascript">
+			var Persion={
+				name:'张三',
+				age:20,
+				say:function(a,b){
+					console.log(this.name);
+				}
+			}
+			var Teacher=new Object();
+			Teacher.name='李老师';
+			Teacher.age=30;
+			Teacher.say=function(){
+				console.log(this.name);
+			}
+			Persion.say();//张
+			Persion.say.call(Teacher,1,2);//李
+			Persion.say.apply(Teacher,[1,2]);//李
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

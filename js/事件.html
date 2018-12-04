@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件</title>
+		<style type="text/css">
+			.one{
+				height: 500px;
+				width: 500px;
+				background-color: #CCCCCC;
+			}
+			.two{
+				height: 300px;
+				width: 300px;
+				background-color: red;
+			}
+			.three{
+				height: 100px;
+				width: 100px;
+				background-color: green;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var btn=document.getElementsByTagName('button')[0];
+				var dd=document.getElementsByTagName('div');
+				var thr=document.getElementsByClassName('three')[0];
+				console.log(dd);
+//				alert(thr);
+//				confirm(thr);
+//				prompt('aaa',thr);//两个参数 ，一个为提示字，一个为默认值
+//				function test(event){
+//					console.log(event.cancelable);
+//					console.log(event.currentTarget);//当前正在处理的
+//					console.log(event.target);
+//				}
+//				thr.addEventListener('click',test);
+//				thr.removeEventListener('click',test)
+				function hangder(){
+					alert(event)
+				}
+				thr.addEventListener('click',hangder,false)
+//				
+//				alert(window.location.host);//返回服务器名称和端口号
+//				confirm(window.location.hostname);//返回服务器名称
+//				confirm(window.location.href);//返回完整的URL
+//				confirm(window.location.pathname);//返回URL的目录和文件名
+//				confirm(window.location.port);//返回URL指定的端口号
+//				confirm(window.location.protocol);//返回页面使用的协议
+//				
+				//location.assign("http://www.baidu.com");
+				//location.replace("http://www.baidu.com");
+				//location.reload(false)
+//				console.log('+++',history.length);
+//				console.log('---',history.back());
+//				console.log('***',history.forward())
+//				console.log('***',history.go(1))；
+//				thr.onclick=function(event){
+//					alert(event.currentTarget)
+//				}
+			}
+		</script>
+	</head>
+	<body>
+		
+		<button>点击我</button>
+		<div class="one">
+			<div class="two">
+				<div class="three"></div>
+			</div>
+		</div>
+	</body>
+</html>

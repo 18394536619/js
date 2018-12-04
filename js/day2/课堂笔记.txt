@@ -1,0 +1,226 @@
+1.数据类型的转换
+    其他数据类型---》boolean
+    Boolean()
+     null  
+     NAN
+     undefined
+     ""
+     0
+     ----->false
+     其他数据类型往number类型转换
+      Number():
+       null   :0
+       NAN    :NAN
+       undefined  :NAN
+       String：
+        不包含字母的，只包含数字的
+        八进制："012"
+
+      parseInt()：字符串
+        "12abc" "12.10"
+      parseFloat():
+      "12.10" "12abc"
+     其他字母到字符串
+     String()
+     var a  =true;
+     => a+""
+     toString():null   undefined不能调用
+     toString()
+
+  
+2.操作符
+   一元操作符：
+     ++ 
+     -- 
+     +  Number()
+     -   -(-a)--->Number()
+   非 !  ！true--->false
+   !!(string)--->Boolean()
+   逻辑运算符：
+      &&：
+         true && "hello" :第二个决定整个表达式额结果
+	 false&&true:返回第一个表达式
+      ||：
+        true ||  "hello" :第一个书返回
+	false|| "hello" : 返回第二个数
+   算数运算符：
+     +:
+        算数运算：去除Object String NAN
+           Number()
+	拼接
+	Object（valueOf（）） + num
+	String :
+	NAN: NAN
+     -
+     *
+     /
+     %
+---------------------------------------
+1.相等和不等
+  ==   !=
+   String :比较字符串序列
+   都是Number:比较数值大小
+   var  a  =10;
+   var  b =10
+   console.log(a==b); true
+   如果类型不相同，他会按照一定规则先转换成同一种数据类型，然后再去比较
+   var  a ="123"
+   var  b =123;
+
+   var   a  =null
+   var  b =10;
+   var  c =undefined
+   console.log(a!=c);false
+
+
+2.全等:先比较数据类型如果数据类型相同在比较数值大小
+ var  a ="123";
+ var b =123;
+ var  c  =(a===b)
+  ===
+  console.log(null === undefined )
+---------------------------------------
+三目运算符：
+ var result = boolean类型的表达式?XXXX:SSSSS 
+  var result = 1>2?"是":"不是"
+  
+  如果明天下雨就不上课了（不下雨就上课）
+   var   str ="下雨"/ "不下雨"
+   //成绩判断
+     1.成绩
+     2. 优秀  良好  中等 及格  不及格
+        90    80    70    60  
+------------------------------------
+判断表达式
+   if(){}else{}
+   if(){
+   }else if(){
+   }else if(){
+   }else{
+   }
+   if(Boolean){
+      boolean 为true 执行这个代码块
+   }else{
+      否则执行这个代码块
+   }
+   1.根据数字判断今天是星期几
+     1）声明一个变量表示一个数字
+     2)1 2 3 4 5 6 7
+
+     if(10>1){
+        var  a  =10;
+     }
+     console.log(a);
+
+     function sum(){
+       var  a  =10;
+     }
+     console.log(a);
+
+
+   var  num  =3;
+   switch(常量){
+      case 情况1 :
+           XXXX;
+	   break;//break可以添加也可以不添加
+     case 情况1 :
+           XXXX;
+	   break;//break可以添加也可以不添加
+     default:
+        XXXX ;
+	break;
+   }
+ 1.switch(常量)
+ 2.case的值是不允许重复的
+ 3.break可以添加也可以不添加
+ 4.default可以添加也可以不添加：所有的case
+ 都不匹配的时候执行default
+
+ 5.如果每个case后面都加了break，那么这时
+ break位置不影响代码的执行，会先匹配所有的
+ case不满足的情况下才会执行default
+ 6.case 不加break ,那么代码会从匹配的位置
+ 开始从上往下执行直到代码遇到break或者代码
+ 执行完成才会跳出switch
+ 7.case  +break   defalut如果放到了最上面
+ 这个时候break的添加会影响后续代码的执行
+ 
+ 3 月有多少天
+    2 
+    1 5 7 
+  ==   ===
+    switch(3){
+       case 1:
+       case 3:
+       case 5:
+       case 7:
+       ...
+       case 12:
+          31;
+	  break;
+         
+    }
+
+2.
+
+ var  num  ="1";
+ switch(num){
+   case 1:
+      console.log("hell0");
+      break;
+    default:
+      console.log("===")
+ }
+ 在比较的时候采用的=== 
+
+-----------------------
+循环表达式
+  1.起点
+  2.终点
+  3.起点怎么向终点靠拢
+  4.循环体
+ 普通for
+  for(var  i  =0;i<10;i++){
+     for(var j=0;j<10;j++){
+     
+     }
+  }
+  执行流程：
+     i=0:  一次
+
+  var  i  =0;
+  for(;i<10;){
+    i++;
+  }
+  
+  1...10
+
+
+
+
+ while
+
+   初始化条件;
+    while(结束条件){
+      循环体;
+      从开始变到结束
+    }
+
+    var  a  =11;
+    var result =0;
+    while(a<=10){
+      result =result+a;
+      a++;
+    }
+
+    var  a=11;
+    var result =0;
+    do{
+        result =result+a;
+	a++;
+    }while(a<=10);
+
+
+
+
+ 增强for

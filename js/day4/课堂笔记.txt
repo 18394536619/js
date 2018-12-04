@@ -1,0 +1,56 @@
+1.增强for
+   for(var  xx in   数组/对象){
+      console.log(xx);
+      对象：
+       xx:对象中的属性名
+       [10,20,30]  0  1 2 
+       数组：
+        xx：获取的数组中数据所在位置的下标
+         
+   }
+终止for循环
+    break：默认终止break所在的循环
+           但是可以结合lable终止任何一个循环
+    continue：默认终止continue所在的本次循环，执行下一次循环
+    但是可以结合lable终止任何一个循环
+-----------------------------
+对象：
+  1.对象的创建
+      var   obj = new Object();
+      obj.name="name";
+      var  obj ={
+         name:"name"，
+	 age:20
+       }
+  2.对象的访问
+     对象.属性名/方法名()
+     对象[属性名]
+    in  
+  3.对象继承Object
+     toString():
+     valueOf():
+     constructor:
+     hasOwnProperty:
+     propertyIsEnumerable:
+     toLocaleString:
+----------------------
+函数：
+  1.创建
+      声明式：
+        test()
+        function  test(){
+	
+	}
+	test()
+      表达式式：
+      cc()//在这代码还没有解析到function
+      var   cc  = function(){
+      }
+      cc()
+      function(){
+      }
+     2.函数的参数：
+
+
+
+   

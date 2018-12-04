@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>内置函数</title>
+		<script type="text/javascript">
+			/*1.打印出当前系统日期，并分别输出年、月、日、星期*/
+			var date=new Date();
+			console.log(date);
+			var year=date.getFullYear();
+			var month=date.getMonth();
+			var dates=date.getDate();
+			var day=date.getDay();
+			console.log('年:',year);
+			console.log('月:',month+1);
+			console.log('日:',dates);
+			console.log('星期:',day);
+			/*2.将系统日期转化为本地格式并输出日期部分*/
+			var lodate=date.toLocaleDateString();
+			var lotime=date.toLocaleString();
+			console.log('日期:',lodate);
+			console.log('时间:',lotime);
+			/*3.输出50-100之间,1-15之间的随机整数*/
+			var num1=Math.ceil(Math.random()*15);
+			console.log(num1);
+			var num2=Math.floor(Math.random()*50)+50;
+			console.log(num2);
+			/*4.举至少一个例子验证Math.min(),Math.max(),Math.round(),
+			    Math.ceil(),Math.floor()*/
+			var res1=Math.min(false,true,2,'45',33,23);//null,true,false,'','1'可被转化为number
+			var res2=Math.max(true,false,'8',7);
+			var res3=Math.ceil(12.1);
+			var res4=Math.floor(12.9);
+			var res5=Math.round(2.5);
+			console.log('min',res1);
+			console.log('max',res2);
+			console.log('ceil',res3);
+			console.log('floor',res4);
+			console.log('round',res5);
+			/*5.总结slice,substr和substring的区别于联系*/
+			var str='html%axure@javascript$jquery#vue';
+			console.log(str.slice(1,5));
+			console.log(str.substr(2,3));
+			console.log(str.substring(6,2));
+			/*
+			 slice(开始位置,结束位置)与substring(开始位置,结束位置)用法相同，都不改变原数组；
+			 	不同：slice()开始位置必须小于结束位置，substring()开始位置可以小于结束位置。
+			 substr(开始位置,截取个数)相当于splice(),但是不改变原数组，splice不是内置函数。
+			 */
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

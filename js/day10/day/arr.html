@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	var  arr=[20,10,30];
+//增强for
+for(var  index in arr){
+  console.log(index);//下标
+  console.log(arr[index]);//下标所对应的数据
+}
+for(var  i=0;i<arr.length;i++){
+  console.log(i);//下标
+  console.log(arr[i]);//t通过下标获取数据
+}
+
+arr.forEach(function(value,index,arr){
+  console.log(value,index);
+})
+ console.log("-----------------")
+
+ var  p1={
+  name:"zhansan",
+  age:20
+ }
+ var  p2={
+  name:"zhansan1",
+  age:28
+ }
+ var arr = [p1,p2];
+
+ for(var  index  in arr){
+   console.log(index)
+   var  value  = arr[index];
+     for(var key in value){
+	   console.log(value[key]);
+	 }
+ }
+ console.log("--------------")
+ var  arr1=[10,20]
+ var arr2=[20,90,88]
+ var  arrAll =[arr1,arr2];
+ arrAll.forEach(function(value,index){
+   //value =[10,20] /[20,90,88]
+   value.forEach(function(value1,index1){
+     console.log(value1);
+   })
+
+ })
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

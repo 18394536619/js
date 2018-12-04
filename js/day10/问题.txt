@@ -1,0 +1,156 @@
+函数：
+   function  test(){
+     var a  =10;
+     return a;
+   }
+   console.log(a);
+    函数的分类：
+         普通函数：执行某些代码块
+	          实现代码的复用
+	 构造函数：使用new关键字进行
+	           调用构建新的对象
+    2.函数的定义：
+      声明一个普通函数
+      function  test(name){
+        console.log(a+b);
+	console.log(name);
+      }
+
+      var  test=function(name){
+      
+      }
+      构造器：
+      function   Test(name){
+        this.name=name;
+      }
+      var  Test=function(name){
+        this.name=name;
+      }
+      3.函数的调用
+        普通调用：test(name) Test(name)
+
+	构建对象调用:new Test(name);
+	非常规调用：
+	this
+	 call()
+	 apply()
+    4.函数的分类 变量
+        函数作为参数：
+       function   test(method){
+       /*
+          method=xx=function()
+	  {console.log(a+b)}
+       */
+       method();
+       }
+       var   xx  =funcction(){
+         console.log(a+b);
+       }
+       var yy =function(){
+         console.log(a-b);
+       }
+       test(xx);
+       test(yy);
+
+	函数作为返回值
+          function  test(){
+	    var  a  =10;
+	    var  b  =function(){
+	    }
+	    return  b;
+	  }
+	  var a  =test();//10
+	  //b=function(){}
+	  var method  =test();
+	  method();
+     5.函数的参数  形参
+     function  test(a,b){
+     }
+     test(10);
+     arguments:保存所有传递给这个方法参数
+     类数组对象：可以向象数组一样通过下标的形式
+     获取数据，下标从开始
+     length:查看类数组的长度
+     callee:等价于函数本身（递归）
+     arguments：想把内部保存的数据拿出
+     for(var  i=0;i<arguments.length;i++){
+        var  value  = arguments[i];
+     }
+     for(var  index in arguments){
+         var value =arguments[index];
+     }
+     var  value =arguments[2];
+     6.函数的实参：
+       基本数据类型的参数：
+       直接将值复制一份进行传递
+
+       引用数据类型的参数：地址
+this：
+    1.变量 
+
+正则表达式:
+  邮箱：zhangtt@briup.com
+       983115235@qq.com
+  var  reg  = /[a-zA-Z0-9]{1,}@[a-zA-Z0-9]{1,}\.(com)$/ig;
+---------------------------------------------
+画图：
+继承：让一个构造函数的原型指向一个他需要继承
+的函数的对象
+function  Father(name,age){
+   this.name=name;
+   this.age=age;
+}
+
+Father.prototype={
+   getBigHouse:function(){
+     console.log("买一个海景房");
+   },
+   getBigCar:function(){
+     console.log("买一个玛莎拉蒂")
+   }
+
+};
+
+function son(name,age,lixiang){
+  this.name=name;
+  this.age=age;
+  this.lixiang =lixiang ;
+  
+}
+原型链和构造器继承组合
+
+子类只能父类原型中的方法
+------------------------------------
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+-------------------
+特点：
+
+名字：p
+属性：ID
+有一个叫p的标签里面有个id,id的值为one
+function  Node(name,att){
+  this.name=name;
+  this.attr=attr;
+}
+var xx  =document.getElementById("one");
+------------------
+数组的遍历：
+1.增强for
+2.普通for
+3.数组API
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>exec</title>
+	<script type="text/javascript">
+	  var  reg  =/abc/ig;
+     var  str ="abc  ab  abc helloabc";
+//类数组对象 数组
+    var  result =reg.exec(str);
+    console.log(result);
+	//获取匹配到的数据
+	console.log(result[0]);
+	//获取下标
+	console.log(result.index);
+	//获取检测的字符串
+	console.log(result.input);
+	console.log(reg)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	  *{
+	  	margin: 0px;
+	  	padding: 0px
+	  }
+	  ul{
+	  	list-style: none
+	  }
+		#leftUl{
+			width: 200px;
+			height: 450px;
+			border:1px solid black;
+			margin: 40px;
+			padding-bottom: 20px
+		}
+
+		#leftUl li{
+			width: 130px;
+			height: 130px;
+			margin: 20px auto
+		}
+		#leftUl li img{
+			width: 130px;
+			height: 130px
+		}
+		li.current{
+			border:2px solid red
+		}
+		div{
+			float: left
+		}
+
+		#right{
+			width: 450px;
+			height: 450px;
+			border:1px solid black;
+			margin: 40px;
+			overflow: hidden;
+			padding: 10px
+		}
+
+		#right li{
+			width: 450px;
+			height: 450px;
+			margin-bottom: 20px	
+		}
+		#right li img{
+			width: 450px;
+			height: 450px
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var leftUl=document.getElementById("leftUl");
+			var lis=leftUl.children;
+			var big=document.getElementById("big");
+
+			leftUl.onmouseover=function(event){
+				if(event.target.nodeName=="IMG"){
+					/*console.log(event.target.getAttribute("src"));*/
+					//1.清除所有li样式
+					Array.prototype.slice.call(lis).forEach(function(item){
+						item.removeAttribute("class");
+					});
+					//2.给当前元素的父级li添加样式
+					event.target.parentNode.setAttribute("class","current");
+					//3.匹配右侧大图
+					big.setAttribute("src",event.target.getAttribute("src"));
+				}
+			}
+
+
+
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<ul id="leftUl">
+			<li class="current"><img src="a.jpg" alt=""></li>
+			<li><img src="b.jpg" alt=""></li>
+			<li><img src="c.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div id="right">
+		<ul id="rightUl">
+			<li><img src="a.jpg" id="big"></li>
+			<li><img src="b.jpg" alt=""></li>
+			<li><img src="c.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

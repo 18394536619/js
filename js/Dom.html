@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Dom</title>
+		<style type="text/css">
+			#content{
+				height: 800px;
+				width: 1000px;
+				background-color: #ccc;
+			}
+			.a{
+				height: 500px;
+				width: 300px;
+				margin-left: 10px;
+				float: left;
+				text-align: center;
+				/*line-height: 100px;*/
+			}
+			.one{
+				background-color: red;
+			}
+			.two{
+				background-color: green;
+			}
+			.three{
+				background-color: blue;
+			}
+			#on{
+				background-color: yellow;
+				color: #FFFFFF;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var content = document.getElementById('content');
+				var two = document.getElementsByClassName('two');
+				var three = document.getElementsByClassName('three');
+				var tt=document.getElementById('two');
+				var one = document.getElementsByClassName('one');
+				var aaa = document.getElementsByClassName('a');
+//				console.log(content.nodeName);
+//				console.log(content.nodeValue);
+//				console.log(content.nodeType);
+//				console.log(content.childNodes);
+
+				var a = content.childNodes[1];
+				var b = content.childNodes.item(1);
+				var c = Array.prototype.slice.call(content.childNodes, 0);
+				var arr = new Array();
+				var d = arr.slice.call(content.childNodes, 0);
+//				console.log(a);
+//				console.log(b);
+//				console.log(c);
+//				console.log('+++', d);
+//				console.log(aaa);
+//				console.log(content.lastChild);
+//				console.log('++++',aaa[1].nextSibling);
+//				console.log('++++',aaa[1].previousSibling);
+
+
+//				console.log(two[0].parentNode);
+//				console.log(two[0].hasChildNodes());//是否含有子节点
+//				var clone=two[0].cloneNode(true);//深复制，复制子节点
+//				console.log(clone);
+//				content.appendChild(clone);//在子元素末尾添加子元素
+//				content.replaceChild(clone,one[0]);//替代子元素one
+//				content.insertBefore(clone,one[0]);//在子元素之前插入
+//				content.removeChild(one[0])//删除子元素one
+
+				//document类型具有的属性
+//				console.log(two);
+////				console.log(two.normalize());//?
+//				console.log('documentElement:',document.documentElement);
+//				console.log('body:',document.body);
+//				console.log('title:',document.title);//获取文档标题
+//				console.log('URL:',document.URL);
+//				console.log('domain:',document.domain);//获取域名
+//				console.log('referrer:',document.referrer);//获取连接到该页面的url
+//				console.log('images:',document.images);
+//				console.log('forms:',document.forms);
+//				console.log('links:',document.links);
+				
+				//html元素具有的属性
+//				console.log('id:',content.id);
+//				console.log('className:',tt.className);
+//				console.log('dir:',content.dir);//语言方向，从左到右
+//				console.log('title:',content.title);
+//				var im=tt.firstElementChild;
+//				console.log('src:',im.src);
+//				console.log('alt:',im.alt)
+//				console.log('lang:',tt.lang);//?
+
+
+//				console.log(three[0]);
+//				three[0].setAttribute('data-on','on');//添加自定义属性
+//				console.log(three[0].getAttribute('data-on'));//获取自定义属性值
+//				three[0].setAttribute('data-a','a');
+//				console.log(three[0]);
+//				three[0].removeAttribute('data-a');//删除自定义属性
+//				console.log('***',three[0].attributes);
+				
+//				var dv=three[0].attributes.getNamedItem('class');//返回nodeNmae属性=class的值
+//				console.log(dv);
+//				console.log(three[0].attributes);
+//				three[0].attributes.removeNamedItem('data-on');//从列表中删除nodeName属性等于name的值
+//				console.log(three[0].attributes);
+//				three[0].attributes.removeNamedItem('id');
+						
+//				var ty=document.createAttribute('id');
+//				ty.nodeValue='on';
+//				one[0].attributes.setNamedItem(ty);//添加属性节点
+//				
+//				console.log('****',content.attributes);
+//				console.log(three[0].attributes.item(1));//返回位于相应位置出的节点
+
+
+//				var dd=document.createElement('div');//创建元素
+////				dd.id='d1';//给元素添加ID名
+////				dd.className='d1';//给元素添加类名
+//				dd.setAttribute('id','d1');//给元素添加ID名
+//				dd.setAttribute('class','d1');//给元素添加类名
+//				content.appendChild(dd);//将新创建的元素追加到content的子元素后边
+//				console.log('+++',content.lastChild);
+//				var div=document.getElementById('d1');
+//				console.log('---',div);
+
+
+//				console.log('three:',three[0]);
+//				console.log('one:',one[0]);
+//				console.log(three[0].children);
+//				console.log(tt.children);
+//				console.log(one[0].children);
+//				console.log('--------------------------------');
+//				console.log(three[0].firstElementChild);//获取第一个孩子元素节点
+//				console.log(three[0].lastElementChild);//获取最后一个孩子元素节点
+//				console.log(three[0].previousElementSibling);//获取上一个兄弟元素节点
+//				console.log(tt.nextElementSibling);//获取下一个兄弟元素节点
+//				console.log(three[0].childElementCount);//获取子元素数量
+//				console.log(three[0].firstElementChild.innerHTML);//获取文本内容
+//				console.log(three[0].firstElementChild.textContent);//获取文本内容
+//				console.log(three[0].firstElementChild.innerText);//获取文本内容
+				
+//				var result=three[0].firstElementChild.nextElementSibling;
+//				console.log(result);
+//				console.log(three[0].lastElementChild.innerHTML.length);
+				var s=document.getElementsByTagName('span');
+//				var dd=three[0].childNodes[3].childNodes[0];//文本节点
+				console.log(s[0].innerHTML,);//获取文本内容
+				console.log(s[0].childNodes[0]);//获取文本节点
+				s[0].childNodes[0].appendData('123');//追加文本内容
+				console.log(s[0]);
+				s[0].childNodes[0].insertData(4,'，我是新添加的内容');//第4位后边插入文本内容
+				console.log(s[0]);
+				s[0].childNodes[0].deleteData(4,9);//删除第4-9位之间的文本内容
+				s[0].childNodes[0].replaceData(24,3,'我是替换内容');//替换24位以后的3个文本内容
+				s[0].childNodes[0].splitText(5);
+//				var sa=s[0].childNodes[0].substringData(0,5);//从第0位开始提取5个元素
+//				console.log(sa);
+//				var dd=document.createTextNode('我是新创建的文本节点的内容');//创建文本节点
+//				console.log(dd);
+//				s[0].appendChild(dd);
+//				console.log(s[0]);
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="content" class="cont" title="这是content" dir="ltr">
+			<div class="one a">
+				<div>点击将跳转到百度</div>
+				
+				<a href="https://www.baidu.com">请点击跳转</a>
+			</div>
+			<div class="two a" id="two">
+				<img src="" class="img" id="img" alt="图片不存在"/>
+				<img src="" alt="图片不存在"/>
+			</div>
+			<div class="three a" id="three">
+				<text>
+					将文档看做是Element对象树，忽略文档Text,Comment节点。Element中的属性
+					children 	类似于childNodes,返回NodeList对象，但是该对象中仅包含Element对象
+					firstElementChild	第一个孩子元素节点	
+					lastElementChild	最后一个孩子元素节点
+					nextElementSibling	下一个兄弟元素节点
+					previousElementSibling	上一个兄弟元素节点
+					childElementCount	子元素的数量，返回值和children.length值相等
+				</text>
+				<span id="span">文本节点。包含的是可以按照字面解释的存文本内容。</span>
+				<img src="" alt="图片找不到了"/>
+				<div>
+					div的内容
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>公约数/公倍数</title>
+		<script type="text/javascript">
+//			求任意两个正整数的最大公约数和(GCD)和最小公倍数(LCM)
+//			辗转相除法的算法为：首先将 m除以 n（m>n）得余数 r，再用余数  r 去除原来的除数，
+//得新的余数，重复此过程直到余数为 0时停止，此时的除数就是m 和 n的最大公约数。
+// 			求 m和 n的最小公倍数: m和 n的积除以(m和 n 的最大公约数)。
+			function gong(num1,num2){
+				var n1=num1;
+				var n2=num2;
+				if(num1>num2){
+					do{	
+						//num2:除数
+						//num1:被除数
+						var c=num2;
+						 var num2=num1%num2;
+						 var num1=c;
+					}while(num1%num2!=0);
+				}else if(num2>num1){
+					do{	
+						//num2:除数
+						//num1:被除数
+						var c=num1;
+						 var num1=num2%num1;
+						 var num2=c;
+					}while(num2%num1!=0);
+				}
+				b=n1*n2/num1;
+				console.log('最大公约数',num1);
+				console.log('最小公倍数',b);
+			}
+			gong(8,12);
+			
+		//最大公约数
+			//从2个数中较小的一个数开始，每次减少1，如果减少1后能被2个数整除，当前数是最大公约数，如果不能则继续减少1，直到1为止。
+			function GCD(num1, num2){
+				 for(i = Math.min(num1, num2); i > 0; i--){
+				  if(num1%i == 0 && num2%i == 0)
+				   return i;
+				 }
+			}
+			console.log('最大公约数',GCD(12, 8));
+		
+		//最小公倍数
+			//从2个数中较大的一个开始，每次加1，得到的数如果能整除2个数，那么当前得到的数就是最小公倍数，否则继续加1，直到得出最小公倍数为止
+			function LCM(num1,num2){
+				for(i=Math.max(num1,num2);i>0;i++){
+					if(i%num1 == 0 && i%num2 == 0){
+				   		return i;
+				 	}
+				}
+			}
+			console.log('最小公倍数',LCM(12, 8));
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

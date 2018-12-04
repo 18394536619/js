@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>质因数</title>
+		<script type="text/javascript">
+			//将一个正整数分解质因数。例如：输入90,打印出90=2*3*3*5。
+
+			function a(num){
+				var i=2;
+				var arr = new Array();
+				while(i<=num){
+					if(num%i==0){
+						arr.push(i);//2.3.3
+						num=parseInt(num/i);//45.15.5
+					}else{
+						i++;//3.4
+					};
+					if(i == num){  //判断是否要结尾 44.14.4
+			            arr.push(num)
+			            break;
+			        }
+				}
+				var str = String();
+				    for(i=0;i<arr.length;i++){
+				        str += arr[i];
+				        if(i != arr.length-1)
+				            str += '*';
+				    }
+				    console.log('可以分解为 :'+str);
+			}
+			a(90);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

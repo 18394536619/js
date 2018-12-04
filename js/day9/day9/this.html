@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this在浏览器中的指向</title>
+	<script type="text/javascript">
+	 /* var   a  =10 ;//window
+	  function  test(){
+	     console.log(this)
+	  }
+	  console.log(a);//10
+	  console.log(this.a);//10
+	  test();//普通的调用方式
+	 */
+    /* var  a  =10;
+	 function  test(){
+	   var a  =30;
+	   var  b  =20;
+	   console.log(a);//30
+	   console.log(b);//20
+	   console.log(this.a);//10
+	   console.log(this.b);//
+	 }
+	 test();*/
+    /* var a  =10;
+	 var  person={
+	    a:20,
+		say:function(){
+			//指向person
+			console.log(this.a);//20
+		}
+	 }
+	 person.say();
+	 person.say.call(this)
+*/
+
+	 function test(){
+	   console.log(this);
+	 } 
+	 var obj  = new test();//
+	 test.call(obj);
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

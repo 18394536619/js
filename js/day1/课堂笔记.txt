@@ -1,0 +1,151 @@
+邮箱：zhang@briup.com
+QQ：983115235（群）
+10（之前）
+-----------------------------------
+js:
+  1.js发展史
+  2.js引入方式（html）
+    <script >
+      
+    </script>
+
+    <script src>
+      
+    </script>
+    3.基本语法
+       1.区分大小写
+     
+       2.标示符（起名）选择题
+           
+         关键字
+
+	 保留字
+
+    4.数据类型（弱类型）  数据结构
+       var  a ="hello"  String 
+       var a =10;    number 
+      简单：
+        null   undefined   number 
+	NAN  String 
+      复杂：
+       对象  函数
+   5.注释
+     单行
+     多行
+
+     HTML
+     css
+     java 
+---------------------------
+配合后台
+
+  "123" 
+  "123"+10000 同一种数据类型
+
+1.数据类型转换
+    其他的数据类型---》Boolean 
+      null---->false
+      undefiend--->false
+      NAN--->false
+      String-->:非空字符串 true
+                ""---false
+      Number:
+          只要是非0的数将来都会转换成true
+	  0 -->false
+
+      Object:
+         var  obj  ={
+	  name:"zhangsan"
+	 }
+	 var  obj =null;//Object  false
+
+
+
+    其他的数据类型---》Number
+      Number()
+         NAN----->NAN
+	 null---->0
+	 undefined---NAN 
+	 number ---正常转换
+	 String ：
+	   1.里面包含非数字的字符"a12" "12a"
+	   ---->NAN
+	   2.数字字符串"12"  "12.0" "-10" "0X16"
+	    正常转换
+           3.注意 八进制字符串在转换的时候不能正常转换
+	     而是去掉前缀0在进行转换
+	// object
+        
+      parseInt()
+        null  --NaN
+	undefined NaN
+	NAN  NAN
+     
+        number ： 小数---》整数
+        String：
+ 从左往右解析， 如果字符串解析到包含数字，
+ 那么数字正常解析直到遇到非数字的字符停止
+ "" ---》NAN
+      parseFloat()：
+      "10.15"
+      
+
+    其他的数据类型---》String 
+     String()
+     toString()
+  
+2.操作符：
+   一元操作符
+   
+   逻辑操作符
+    !
+    短路运算符
+    两个都是Boolean类型 返回的是Boolean类型
+    
+    &&: 同为ture 则为true
+    true && false
+    false&&true&&true
+
+     如果第一个数如果是true或是能够被转换成true的数据，这时表达式的值有第二个数决定
+     但如果第一个数是false或者是能够被转换成false，那这时整个表达式的值就是第一个数
+     true   false 
+     true    "hello"
+     "hello"  "world"
+
+     false     true
+     undefined  true
+ 
+
+
+    ||:只要有一个为true则返回true
+    true || false
+
+    如果一方式boolean 另一方不是boolean类型
+    var a =true;
+    var b  ="hello";
+ 
+    var  result  = a&&b;
+    var  result  = b&&a;
+
+    如果使用 ||  两边的数
+    如果第一个数是ture或是能够被装换成true的表达式，那么这时将第一个数返回
+    如果第一个数是false或是能够被装换成false的表达式，那么这时返回第二个表达式
+    
+   算数操作符
+    +：
+       纯数字运算或者者是去除掉String、Object--->普通加法
+       var  a =10;
+       var b  =20;
+       var c  =a+b;30
+
+       var  a  =true;
+       var b  =false;
+       var c  =a+b; //number
+
+  比较运算符：
+     
+     10>2  true 
+     10>"2"
+    "90">"91"  按照ascIIXX 
+     
+    

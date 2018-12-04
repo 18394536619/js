@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基本数据类型传递和数据类型传递</title>
+		<script type="text/javascript">
+			/*当前变量为基本数据类型，进行值传递,
+			 传递后改变其中一个值，另一个不受影响*/
+			var a=10;
+			var b=a;
+//			b=15;
+			console.log(a);
+			console.log(b);
+			/*引用数据类型，传递引用地址*/
+			var o1={
+				name:"张三",
+				age:12
+			};
+			o2=o1;
+			console.log(o1);
+			console.log(o2);
+			console.log(o1==o2);
+			console.log(o1===o2);
+			o2.name="李四";
+			o1.name="王麻子";
+			console.log(o1.name);
+			console.log(o2.name);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

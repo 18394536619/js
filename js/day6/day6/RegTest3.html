@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>exec</title>
+	<script type="text/javascript">
+	  var   reg =/Java/ig;
+	  var  str  ="JavaScript hello java  world JAvaee";
+	  /*
+	   0:java
+	   index:0
+	   input :xx 
+	  */
+	  /* var   result = reg.exec(str);
+        console.log(result);
+	   var result1=reg.exec(str);
+	    console.log(result1);
+	   var result2=reg.exec(str);
+	    console.log(result2);
+	   var result3=reg.exec(str);
+	    console.log(result3);*/
+        /*
+        var res = reg.exec(str) ;
+		while(res){
+		   console.log(res);
+		   res  = reg.exec(str);
+		}*/
+		var  res;
+		var  count=0;
+		var  arr=[];
+		while(res=reg.exec(str)){
+		    console.log(res);
+			//统计数量
+			count++;
+			//获取匹配的字符串
+			//arr.push(res[0]);
+			var  ss = res[0];
+			//被匹配的字符串出现字符串中的那个位置
+			var  index1 =res.index;
+			var  strs =ss+"这个字符串所在的位置为"+index1;
+			arr.push(strs);
+
+		}
+		alert("java出现了"+count);
+		console.log(arr);
+		
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

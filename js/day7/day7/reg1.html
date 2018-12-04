@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>reg</title>
+	<script type="text/javascript">
+	   var   reg=/abc/i;
+	   var str ="ABCabchelloabC";
+	 //  var result =reg.exec(str);
+      //result是一个类数组对象
+	  /*
+	     0---字符串
+		 index--获取位置
+	  */
+	 // console.log(result);
+	 console.log(reg);
+	 var  result  = reg.exec(str);
+	 console.log(result);
+	 console.log("---------");
+	 var  result1  =reg.exec(str);
+     console.log(result1);
+	 console.log(reg);
+
+
+	 /* var  res ;
+	  while(res  = reg.exec(str)){
+	    console.log(res);
+		console.log(reg);
+
+	  }*/
+
+	  
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

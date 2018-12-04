@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>优先级</title>
+		<script type="text/javascript">
+			/*1，预解析的顺序是从上到下，函数的优先级高于变量，函数声明提前到当前作用域最顶端，在var之上。 
+			2,函数执行的时候，函数内部才会进行预解析，如果有参数，先给实参赋值再进行函数内部的预解析。 
+				  预解析函数是声明+定义（开辟了内存空间，形参值默认是undefined）。 
+			3，预解析变量是只声明，不赋值，默认为undefined。 
+			4，函数重名时，后者会覆盖前者。 
+			5，变量重名时，不会重新声明，但是执行代码的时候会重新赋值。 
+			6，变量和函数重名的时候，函数的优先级高于变量。*/
+			
+			//function fn
+			//var n
+//			var n = 1;
+//			fn(n);
+//			function fn() {
+//				//var n
+//			    console.log(n);
+//			    var n = 2;
+//			    console.log(n);
+//			}
+			
+//			var n = 1;
+//			fn(n);
+//			function fn(n) {
+//			    console.log(n);
+//			    var n = 2;
+//			    console.log(n);
+//			}
+			
+			var n = 1;
+			fn(n);
+			function fn(n) {
+			    console.log(n);
+			    function n() {
+			        console.log(666);
+			    }
+			    var n = 2;
+			    console.log(n);
+			}
+			
+			
+			
+//			alert('+++++++++++++++++1++++++++++++++++++++++++');
+//			alert(add);//add(a,b,c)
+//			var add=0;
+//			alert(add);//0
+//			alert('+++++++++++++++++2++++++++++++++++++++++++');
+//			
+//			alert(add);//0
+//			var add=function(a){}
+//			add();
+//			alert(add);//function(a){}
+//			alert('+++++++++++++++++3++++++++++++++++++++++++');
+//			alert(add);//function(a){}
+//			var add=2;
+//			alert(add);//2
+//			alert('+++++++++++++++++++4++++++++++++++++++++++');
+//			alert(add);//2
+//			function add(b){}
+//			alert(add);//2
+//			alert('+++++++++++++++++++5++++++++++++++++++++++');
+//			alert(add);//2
+//			var add=3;
+//			function add(a,b,c){};
+//			alert(add);//3
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

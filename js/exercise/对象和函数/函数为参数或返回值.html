@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>参数 返回值</title>
+		<script type="text/javascript">
+			//函数做参数
+//			var a=1;
+			function persion(){
+				console.log('I am车主,I叫了代驾');
+			}
+			function daijia(method){
+				method();
+				console.log('I am 代驾');
+			}
+			daijia(persion);
+			
+			
+			//函数做返回值
+			function add(a,b){
+				var sum=a+b;
+				return function(){
+					console.log('I am 返回的函数',sum);
+				}
+			}
+			var result=add(3,8);
+			result();
+//			console.log(result);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

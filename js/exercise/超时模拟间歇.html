@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: relative;
+		}
+	</style>
+<script type="text/javascript">
+window.onload=function(){
+	//1.获取元素
+	var div=document.getElementsByTagName("div")[0];
+	var btn=document.getElementsByTagName("button")[0];
+
+	//2.绑定事件
+	btn.onclick=function(){
+		/*setInterval(function(){
+			div.style.left=div.offsetLeft+100+"px";
+		},1000);*/
+		function handler(){
+			div.style.left=div.offsetLeft+100+"px";
+			setTimeout(handler,1000);
+			
+		}
+		setTimeout(handler,1000);
+
+	}
+}
+</script>
+</head>
+<body>
+	<div></div>
+	<button>超时模拟间歇</button>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承</title>
+	<script type="text/javascript">
+	//函数
+	    function   YueMu(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		YueMu.eat=function(){
+		 console.log("吃饭");
+		}
+
+		YueMu.eat();
+    //原型
+	 YueMu.prototype={
+		 constructor:YueMu,
+         buyBigHouse:function(){
+		   console.log("大房子")
+		 }    
+	 }
+
+	 function  Son(name,age){
+	   this.name=name;
+	   this.age=age;
+	 }
+
+	 Son.prototype=new YueMu();//__proto__
+
+	 Son.prototype.say=function(){
+	   console.log("人生圆满")
+	 }
+	 var son  =new Son("李四",28);
+     son.say();
+	 son.buyBigHouse();
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

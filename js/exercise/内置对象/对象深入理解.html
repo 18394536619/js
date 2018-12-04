@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>对象深入理解</title>
+		<script type="text/javascript">
+			/*
+			 分别用普通方式（一个个造）、工厂模式、构造函数模式、原型模式、
+			 组合使用构造函数模式和原型模式5种方式
+			 各生成3个对象（有年龄、姓名等属性和一个挣钱的方法）
+			 * */
+			//1.普通方式
+			var stu1={
+				name:'老大',
+				age:25,
+				money:function(){
+					console.log('炒股');
+				}
+			};
+			var stu2={
+				name:'老二',
+				age:25,
+				money:function(){
+					console.log('卖房');
+				}
+			};
+			var stu3={
+				name:'老三',
+				age:25,
+				money:function(){
+					console.log('卖水果');
+				}
+			};
+			stu3.money();
+//			console.log('stu',stu3);
+			//2.构造函数模式
+			function Person(name,age){
+				this.name=name;
+				this.age=age;
+				this.money=function(){
+					console.log(this.name);
+				}
+			};
+			var p1=new Person('大哥',30);
+			var p2=new Person('二哥',28);
+			var p3=new Person('三哥',22);
+//			console.log('Person',p3);
+			p3.money()
+			//3.工厂模式
+			function teacher(name,age){
+				var o=new Object();
+				o.name=name;
+				o.age=age;
+				o.money=function(){
+					console.log(this.name);
+				}
+				return o;
+			}
+			var t1=teacher('tom',36);
+			var t2=teacher('boss',37);
+			var t3=teacher('larry',26);
+//			console.log('teacher',t1);
+			t1.money();
+			//4.原型模式
+			function Animal(){};
+			Animal.prototype.name='猫';
+			Animal.prototype.age=2;
+			Animal.prototype.sayName=function(){
+				console.log(this.name);
+			}
+			var gou=new Animal();
+			gou.name='狗狗';
+			gou.age=1;
+			var zhu=new Animal();
+			zhu.name='猪猪';
+			zhu.age=3;
+			var yu=new Animal();
+			yu.name='鱼';
+			yu.age=2;
+			var lv=new Animal();
+//			console.log('Animal',yu);
+//			lv.sayName()
+			yu.sayName()
+			//5.组合(构造模式和原型模式)
+			function Car(name,color){
+				this.name=name;
+				this.color=color;
+			}
+			Car.prototype={
+				constructor:Car,
+				sayName:function(){
+					console.log(this.name)
+				}
+			}
+			var car1=new Car('奔驰','red');
+			var car2=new Car('奥迪','white');
+			var car3=new Car('法拉利','red');
+//			console.log('Car',car1);
+			car3.sayName()
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

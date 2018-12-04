@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数作用</title>
+    <script>
+	 //函数作为参数出现  先把函数当做一个普通变量
+	 //var  a  =10;
+	 function  test(num){
+		 /*num=a=10*/
+	   console.log(num);
+	 }
+	 var  method  =function(a,b){
+	    var  result  =a+b;
+		return   result;
+	 }
+ 
+	 function  callMethod(method){
+		 console.log(method)
+		 //method方法
+		var res  = method(10,20);
+		//console.log(res);
+		return res;
+	 }
+	// callMethod(a);
+	var  res =callMethod(method);
+
+	// test(a);
+    console.log("--------------");
+	//函数当做一个返回值
+	//方法  实现所有的加减乘除操作
+	function  add(){
+	  var  res =0;
+	  for(var  i=0;i<arguments.length;i++){
+	    res = res+arguments[i];
+	  }
+	  console.log(res);
+	}
+	function  mul(){
+	  var  res =1;
+	  for(var  i=0;i<arguments.length;i++){
+	    res = res*arguments[i];
+	  }
+	  console.log(res);
+	}
+	add(1,2,3)
+	mul(1,2,3)
+	//改进
+	function getMethod(whatMethod){
+	   if(whatMethod=="+"){
+		   var  add=function(){
+		      var  res  =0;
+			  for(var index in arguments){
+			    res =res+arguments[index];
+			  }
+			  console.log(res)
+		   }
+	       return  add;
+	   }else if(whatMethod=="*"){
+	      var  mul=function(){
+		      var  res  =1;
+			  for(var index in arguments){
+			    res =res*arguments[index];
+			  }
+			  console.log(res);
+		   }
+		   return  mul;
+		   
+	   }
+	}
+	//方法调用 条件不同执行不同的操作
+	var  method  =getMethod("+");
+   
+	method(1,2,3,8)
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

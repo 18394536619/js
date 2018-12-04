@@ -1,0 +1,154 @@
+
+
+事件代理：
+	将本应该绑定给子级元素的事件绑定给父级元素(直接父级)
+	事件类型：
+		支持子元素的事件
+
+	if(event.target.nodeName=="td"){}
+
+	<div id="outer">
+		<div id="center">
+			<div id="inner"></div>
+		</div>
+	</div>
+
+	outer.onmouseenter=function(event){
+			console.log(event.target);
+	}
+
+
+
+BOM:
+	浏览器对象模型
+
+	window：
+		screenX
+		screenY
+
+		innerWidth
+		innerHeihgt
+		outerWidth
+		outerHeight
+
+		screen对象：
+			.width
+			.height
+			.availWidth
+			.availHieght
+
+	open():
+		打开一个新窗口
+		参数：
+			新打开的页面路径
+			新打开页面的打开方式
+			新打开页面的样式设计
+			"width=100px,height=100px"
+
+		返回值：
+			新打开窗口的winodw对象
+
+	w.resizeTo(200,200)//200*200
+	w.resizeBy(200,200)//300*300
+
+	w.moveTo(100,100)
+	w.moveBy(100,-100)
+
+
+	vae a=10;
+	alert(a);
+	console.log(a);
+	console.log(a);
+
+
+	alert()
+		参数：弹出框内容
+		返回值：没有返回值
+	prompt():
+		系统对话框
+		返回值：
+			确定：string类型用户输入的内容
+			取消：null
+
+	confirm()：
+		系统确认框
+		返回值：
+		确认：true
+		取消：false
+
+
+	setTimeout()
+		超时调用
+		超过时间后所调用的函数
+		超时时间，毫秒数
+		超过当前时间后调用一次
+		返回值：
+			唯一标识
+
+	var id=setTimeout(funciton(){
+			alert();
+		},1000);
+
+	取消超时调用：
+		clearTimeout(id);
+		参数：
+			需要取消的超时调用函数返回值
+
+
+	间歇调用：
+		var id=setInterval()
+		参数：
+			间歇调用的函数
+			间歇时间
+		返回值：
+			唯一标识间歇调用的值
+
+
+	取消间歇调用：
+		clearInterval(id)
+
+
+
+	history:
+		length:[his,1,2,3]
+			从1开始
+		back()
+		forward()
+		go()
+
+	localtion:
+		保存当前页面的一系列信息
+		href:路径
+		host:主机+端口号
+		hostName:主机名称
+		port:端口号
+
+	assign()
+		打开一个新窗口
+		参数：
+			url
+		会再历史记录中新增添一条记录
+	replace():
+		替换当前页面
+		参数：url
+		不会产生历史记录
+	reload()：
+		重新加载当前页面
+
+
+
+样式：
+	dom.style.width
+
+	font-size
+	dom.style.fontSize
+	backgroundColor
+
+
+	div.offsetWidth
+	offsetHeight
+
+	clientWidth
+
+	offsetLeft
+	offsetTop

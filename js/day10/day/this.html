@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+	<script>
+	   //所述的环境对象
+	   /*
+	     var  window = this= new Window()={};
+	   */
+	    var a  =10;
+		console.log(a);//window-->10
+		function  test(){
+		  var  a  =30;//混淆作用
+		  console.log(this.a);
+		  function  inner(){
+		   console.log(this.a);//window 10
+		  }
+		 // inner();
+		 var  pp  =new person(50);
+		 inner.call(pp);
+		}
+       //test();
+	   function  person(a){
+	     this.a=a;
+	   }
+	   var  per  = new person(20);
+	   test.call(per);
+
+	
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

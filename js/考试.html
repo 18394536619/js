@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>考试</title>
+		<script>
+			window.onload = function() {
+//							 var arr = [1,2,3,4,5,3,4,6,8,1];
+//							 var tempArr=[];
+//							 for(var i=0;i<arr.length;i++){
+//							 	if(tempArr.indexOf(arr[i])==-1){
+//						          tempArr.push(arr[i]);
+//						        }
+//							 }
+//							 console.log(tempArr);
+
+							var arr = [{
+						      name:'math',
+						      commit_time:100,
+						      pass_time:90
+						    },{
+						      name:'algorithm',
+						      commit_time:10,
+						      pass_time:8
+						    },{
+						      name:'string',
+						      commit_time:50,
+						      pass_time:1
+						    },{
+						      name:'dp',
+						      commit_time:100,
+						      pass_time:50
+						    }];
+//						    arr.forEach(function(item,index){
+//						    	var obj={
+//						    		name:item.name,
+//						    	}
+//						    	var num=item.pass_time/item.commit_time;
+//						    	if(0<=num&&num<0.3){
+//						    		obj.level=5
+//						    	}
+//						    })
+				//		    
+						    var temp=[];
+						    arr.forEach(function(item,index){
+						    	var obj={
+						    		name:item.name,
+						    	}
+						    	var num=item.pass_time/item.commit_time;
+						    	if(num<=0.3&&num>=0){
+						    		obj.level=5;
+						    	}else if(num<=0.6&&num>0.3){
+						    		obj.level=4;
+						    	}else if(0.6<num&&num<1){
+						    		obj.level=4;
+						    	}
+						    	temp.push(obj)
+						    })
+							 console.log(temp);
+							 var result=temp.sort(function(a,b){
+							 	if(a.name<b.name){
+							 		return -1;
+							 	}else if(a.name>b.name){
+							 		return 1;
+							 	}
+							 })
+							 console.log(result);
+
+							 var arr=[1,2,3,4,5,6,7];
+							 var result=arr.reverse();
+							 console.log(result);
+				
+//				var arr=[1,2,3,4,5,6,7];
+//				var len=arr.length-1;
+//				for(var i=0;i<len/2;i++){
+//					var temp=arr[i];
+//					arr[i]=arr[len-i];
+//					arr[len-i]=temp
+//					
+//				}
+//				  console.log(arr);
+
+//				var arr = [8, 19, 3, 12, 5, 4, 2, 3, 7, 6, 9];
+//				var result = arr.sort(function(a, b) {
+//					if(a < b) {
+//						return -1;
+//					} else {
+//						return 1
+//					}
+//				});
+//				console.log(arr);
+				
+//				var lis=document.getElementsByTagName('li');
+//				console.log(lis);
+//				var a=[];
+//				a.slice.call(lis,0).forEach(function(item,index){
+//					item.onclick=function(){
+//						alert(index+1)
+//					}
+//				});
+				
+//				var uu=document.getElementsByTagName('ul')[0];
+//				uu.onclick=function(event){
+//					console.log(event.target);
+//					if(event.target.innerText=='first'){
+//						alert(1)
+//					}else if(event.target.innerText=='second'){
+//						alert(2)
+//					}
+//				}
+				
+				
+			}
+			
+		</script>
+	</head>
+
+	<body>
+		<div>
+			<ul>
+				<li>first</li>
+				<li>second</li>
+				<li>third</li>
+				<li>fourth</li>
+				<li>fifth</li>
+			</ul>
+		</div>
+	</body>
+
+</html>

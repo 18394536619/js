@@ -1,0 +1,227 @@
+对象的创建：
+1字面量：
+    var   xx = new Object();
+    var xx={};
+2.工厂模式：
+function   createPerson(name,age){
+   var  xx  = new Object();
+   xx.name=name;
+   xx.age=age;
+   return   xx;
+}
+3.构造器
+    function Person(name,age){
+      this.name=name;
+      this.age=age;
+    }
+    var xx =new Person("张三",20);
+4.纯原型模式
+function  Person(){
+}
+Person.prototype.name='张三';
+var xx  =new  Person();
+console.log(xx.name);
+xx.name="lisi";
+console.log(xx.name);
+5.默认原型+构造器
+  function   Person(name,age){
+     this.name=name;
+     this.age=age;
+  }
+  Person.prototype.sayName=function(){
+  
+  }
+  6.自定义原型+构造器
+    function Person(name,age){
+      this.name=name;
+      this.age=age;
+    }
+    Person.prototype={
+        constructor:Person,
+        say:function(){
+	
+	}
+    }
+    new Person("lisi",20);
+---------------------------------
+1.Person（人） 吃饭  睡觉  吵架
+  Student：学习
+  Worker：上班
+
+  function  Person(name,age){
+    this.name=name;
+    this.age=age;
+  }
+  Person.prototype={
+     eat:function(){},
+     sleep:function(){},
+     chaojia:function(){}
+  }
+
+----------
+function Student(name,age){
+    this.name=name;
+    this.age=age;
+}
+Student.prototype={
+     eat:function(){},
+     sleep:function(){},
+     chaojia:function(){}
+}
+
+function Worker(name,age){
+    this.name=name;
+    this.age=age;
+}
+Worker.prototype={
+     eat:function(){},
+     sleep:function(){},
+     chaojia:function(){}
+}
+-------------------------------------
+function  Person(name,age){
+    this.name=name;
+    this.age=age;
+  }
+  Person.prototype={
+     eat:function(){},
+     sleep:function(){},
+     chaojia:function(){}
+  }
+
+----------
+
+function  Person(name,age){
+    this.name=name;
+    this.age=age;
+  }
+ Object.prototype.eat=function(){}
+ Object.prototype.sleep=function(){}
+
+function Student(name,age){
+    this.name=name;
+    this.age=age;
+}
+Student.prototype={
+     eat:function(){},
+     sleep:function(){},
+     chaojia:function(){}
+}
+
+function Worker(name,age){
+    this.name=name;
+    this.age=age;
+}
+Worker.prototype={
+     eat:function(){},
+     sleep:function(){},
+     chaojia:function(){}
+}
+ ----------------------
+ function  Person(name,age){
+    this.name=name;
+    this.age=age;
+  }
+  Person.prototype={
+     eat:function(){},
+     sleep:function(){},
+     chaojia:function(){}
+  }
+ var  pp= new  Person();
+
+function Student(name){
+  this.name=name;
+
+}
+Student.prototype=new Object();
+Student.prototype=new Person();
+new Student().eat();
+
+--------------
+组合继承：
+   方法采用原型链继承
+   属性采用借用构造器
+---------------
+javascript:
+ECMAScript:运行在浏览器   
+          :运行在服务器端
+浏览器端：html 
+对象.属性/方法
+  我有一个需求  方法
+  js
+DOM :
+BOM:
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+ <p></p>
+
+</body>
+</html>
+
+共同的特性：
+ 所有的标签都名字  属性  值
+ 对象
+
+ 文档树的形式进行存储
+
+
+
+每一个标签都会被一个节点对象
+既然是对象属性方法
+Object 
+Node
+var  x  = new Node();
+
+          Node 
+
+Document 这个页面文档
+
+document
+console.log(document instanceof Document)//true
+console.log(document instanceof Node);;/
+
+Element(1) Comment(8) TextNode(
+) ..
+
+
+Node :中常用的属性
+   nodeType:获取节点类型
+   nodeValue:节点值
+   选择：
+   parentNode:获取父节点
+   childNodes:获取孩子节点
+   firstChild:第一个孩子节点
+   lastChild:最后一个孩子节点
+   previousSibling:上一个兄弟节点
+   nextSibling:下一个兄弟节点
+操作：
+   添加节点：
+
+   
+
+
+Document 以及document原型中的函数
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+  

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数的调用</title>
+    <script>
+	//普通方法出现
+	  function  test(name){
+	    console.log("hello");
+		//arguments.callee(); 递归
+
+	  }
+	  test("张三");//普通调用  this window
+	  test.call({},"张三");
+	  test.apply({}，["张三"]);
+	  new test();//这个一般不用来调动封装函数
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

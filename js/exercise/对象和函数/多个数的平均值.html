@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>平均值</title>
+		<script type="text/javascript">
+			function pingjun(){
+				var sum=0;
+				for(key in arguments){
+					var value=arguments[key];
+					sum=sum+value;
+					
+				}
+				var s=arguments.length;
+				var result=sum/s;
+				console.log('总值为:',sum);
+				console.log('个数为:',s);
+				console.log('平均值为：',result);
+			}
+			pingjun(10,10,10,10,10,10);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

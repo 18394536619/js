@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承</title>
+	<script>
+	   function  Person(name){
+	      this.name=name;
+	   }
+	   Person.prototype={
+	     constructor:Person,
+		 eat:function(){
+		   console.log("eat");
+		 }
+	   };
+	   function Son(name){
+	     this.name=name;
+	   }
+	   var x  = new Person();
+	   x.eat();
+	   Son.prototype=x;
+	   var son  =new Son();
+	   son.eat();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

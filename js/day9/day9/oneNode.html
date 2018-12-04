@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+<div ><p>world</p><p id="one"><span>one</span><span>two</span></p><p>nihao</p>
+</div>
+	
+</body>
+	<script>
+	   var xx = document.getElementById("one");
+	   console.log(xx);
+	   console.log(xx instanceof Node);
+	   console.log(xx.nodeType);//获取节点的类型
+	   console.log(xx.nodeName);//获取标签名字
+	   console.log(xx.nodeValue);//获取标签值
+	   var child  =xx.childNodes;
+	   console.log(child);
+	   for(var  i=0;i<child.length;i++){
+	     console.log(child[i])
+	   }
+	   //获取当前节点的父节点
+	   var  pp =xx.parentNode;
+	   console.log(pp);
+	   console.log("-------------")
+	   var  sibling = xx.previousSibling;
+	   var  next = xx.nextSibling;
+	   console.log(sibling);
+	   console.log(next);
+	   console.log(xx.firstChild);
+	   console.log(xx.lastChild);
+	   //document
+	   var p =document.createElement("p");
+	   p.innerHTML="下课了";
+	   console.log(p)
+       xx.parentNode.appendChild(p);
+
+	 
+	</script>
+</html>
